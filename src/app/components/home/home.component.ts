@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -18,9 +17,7 @@ export class HomeComponent implements OnInit {
   Lives_neighbors_count = 0;
   GenerationInterval: any
   Delay = 2000
-  // name = '';
-  // ipt1 = new FormControl('');
-
+  
   constructor() { }
 
   ngOnInit(): void { }
@@ -63,14 +60,6 @@ export class HomeComponent implements OnInit {
     }
 
   }
-
-  // func(): void {
-  //   //this.name = 
-  //   //this.mat[5][5]=false;
-  //   // alert(this.ipt1.value);
-  //   //this.First_generation();
-
-  // }
 
   First_generation() {
     const Lives_cells = this.Get_Lives_cells_num();
