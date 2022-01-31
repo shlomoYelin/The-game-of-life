@@ -17,12 +17,12 @@ export class HomeComponent implements OnInit {
   Lives_neighbors_count = 0;
   GenerationInterval: any
   Delay = 2000
-  
+
   constructor() { }
 
   ngOnInit(): void { }
 
-  Get_cell_style(){
+  Get_cell_style() {
     return 3500 / (this.Board_size * this.Board_size) + 'px';
   }
 
@@ -155,14 +155,14 @@ export class HomeComponent implements OnInit {
 
 
 
-  Check_neighbor(Row_index: number, Columm_index: number) {
-    try {// for case that index of neighbor out of range
-      if (this.Board[Row_index][Columm_index] == true) {
-        this.Lives_neighbors_count++;
-        return;
-      }
+  Check_neighbor(Row_index: number, Column_index: number) {
+    // for case that index of neighbor out of range
+    if (Row_index > this.Board_size - 1 || Column_index > this.Board_size - 1 || Row_index < 0 || Column_index < 0) {
+      return;
     }
-    catch (error) { }
+    if (this.Board[Row_index][Column_index] == true) {
+      this.Lives_neighbors_count++;
+    }
   }
 
 }
