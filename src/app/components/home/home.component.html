@@ -1,0 +1,145 @@
+<div>
+  <br />
+  <br />
+  <div>
+    <div class="content p-2 container">
+      <div class="row">
+        <div class="col">
+          <table>
+            <tr *ngFor='let loop3 of Board ;let i= index'>
+              <td *ngFor='let loop3 of Board[i] ;let j= index'>
+                <div class="content" [ngStyle]="{'height':Get_cell_style(),'width':Get_cell_style()  } "
+                  [ngClass]="Board[i][j]? 'live' : 'dead'"></div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="col">
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <div style='text-align:"center"'>
+            <h1 style="text-align:'center'">
+              <p><em>The game of life.</em></p>
+            </h1>
+            <button style="text-align: center;" mat-stroked-button (click)="Start_game()">Start</button>
+          </div>
+          <div style="text-align: center">
+            <div>
+              <br />
+              <mat-form-field appearance="fill">
+                <mat-label>Speed </mat-label>
+                <mat-select (selectionChange)="Delay_cells_change($event.value)">
+                  <mat-option value="-1">Stop</mat-option>
+                  <mat-option value="2000">Very slow</mat-option>
+                  <mat-option value="1000">Slow</mat-option>
+                  <mat-option value="500">Normal</mat-option>
+                  <mat-option value="200">Fast</mat-option>
+                  <mat-option value="0">Very fast</mat-option>
+
+
+                </mat-select>
+
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="fill">
+                <mat-label>Select number of cells </mat-label>
+                <mat-select (selectionChange)="Cellls_number_change($event.value)">
+                  <mat-option value="6">6 x 6</mat-option>
+                  <mat-option value="8">8 x 8</mat-option>
+                  <mat-option value="10">10 x 10</mat-option>
+                  <mat-option value="15">15 x 15</mat-option>
+                  <mat-option value="20">20 x 20</mat-option>
+                  <mat-option value="30">30 x 30</mat-option>
+                  <mat-option value="50">50 x 50</mat-option>
+                  <mat-option value="75">75 x 75</mat-option>
+                  <mat-option value="100">100 x 100</mat-option>
+
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="fill">
+                <mat-label>Select the rules </mat-label>
+                <mat-select (selectionChange)="Rules_change($event.value)">
+                  <mat-option value="original">original</mat-option>
+                  <mat-option value="high_life">high life</mat-option>
+                  <mat-option value="spontaneous">spontaneous</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="fill">
+                <mat-label>Select the Initial amount of live cells </mat-label>
+                <mat-select (selectionChange)="Initial_amount_live_cells_change($event.value)">
+                  <mat-option value="Low">Low</mat-option>
+                  <mat-option value="Medium">Medium</mat-option>
+                  <mat-option value="Large">Large</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col">
+          <mat-form-field appearance="fill">
+            <mat-label>Select number of cells </mat-label>
+            <mat-select (selectionChange)="Cellls_number_change($event.value)">
+              <mat-option value="6">6 x 6</mat-option>
+              <mat-option value="8">8 x 8</mat-option>
+              <mat-option value="10">10 x 10</mat-option>
+              <mat-option value="15">15 x 15</mat-option>
+              <mat-option value="20">20 x 20</mat-option>
+              <mat-option value="30">30 x 30</mat-option>
+              <mat-option value="50">50 x 50</mat-option>
+              <mat-option value="75">75 x 75</mat-option>
+              <mat-option value="100">100 x 100</mat-option>
+
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="fill">
+            <mat-label>Select the rules </mat-label>
+            <mat-select (selectionChange)="Rules_change($event.value)">
+              <mat-option value="original">original</mat-option>
+              <mat-option value="high_life">high life</mat-option>
+              <mat-option value="spontaneous">spontaneous</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="fill">
+            <mat-label>Select the Initial amount of live cells </mat-label>
+            <mat-select (selectionChange)="Initial_amount_live_cells_change($event.value)">
+              <mat-option value="Low">Low</mat-option>
+              <mat-option value="Medium">Medium</mat-option>
+              <mat-option value="Large">Large</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="fill">
+            <mat-label>Speed </mat-label>
+            <mat-select (selectionChange)="Delay_cells_change($event.value)">
+              <mat-option value="-1">Stop</mat-option>
+              <mat-option value="2000">Very slow</mat-option>
+              <mat-option value="1000">Slow</mat-option>
+              <mat-option value="500">Normal</mat-option>
+              <mat-option value="200">Fast</mat-option>
+              <mat-option value="0">Very fast</mat-option>
+
+
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+</div>
